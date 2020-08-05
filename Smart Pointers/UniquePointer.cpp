@@ -23,7 +23,7 @@ class unique_ptr {
  public:
   unique_ptr() = default;
 
-  explicit unique_ptr(pointer raw_resource) : ptr_resource(std::move(raw_resource)) {};
+  explicit unique_ptr(pointer raw_resource) : ptr_resource(raw_resource) {};
 
   unique_ptr(pointer raw_resource, deleter_type deleter) :
       ptr_resource(std::move(raw_resource)), operator_delete(deleter) {}
